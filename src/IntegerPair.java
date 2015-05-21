@@ -43,21 +43,22 @@ class IntegerPair implements Comparable {
 }
 
 class IntegerTriple implements Comparable {
-    private Integer _first, _second, _third;
+    private Double _first;
+    private Integer _second, _third;
 
-    public IntegerTriple(Integer f, Integer s, Integer t) {
+    public IntegerTriple(Double f, Integer s, Integer t) {
         _first = f;
         _second = s;
         _third = t;
     }
 
-    Integer first() { return _first; }
+    Double first() { return _first; }
     Integer second() { return _second; }
     Integer third() { return _third; }
 
     public int compareTo(Object o) {
         if (!this.first().equals(((IntegerTriple)o).first()))
-            return this.first() - ((IntegerTriple)o).first();
+            return (int) (this.first() - ((IntegerTriple)o).first());
         else if (!this.second().equals(((IntegerTriple)o).second()))
             return this.second() - ((IntegerTriple)o).second();
         else

@@ -31,12 +31,13 @@ public class ConnectCampus {
 
         double mst_cost = 0;
         UnionFind UF = new UnionFind(N);
-
+        int num_link = N-1;
         for (int i = 0; i < M; i++) {
             int m1 = in.readInt();m1--;
             int m2 = in.readInt();m2--;
             w = getDistance(m1,m2);
-            UF.unionSet(m1, m2);
+            if(UF.unionSet(m1, m2)) num_link--;
+            //TODO: find some way to remove edge from EdgeList, then change the next for-loop to N->num_link
         }
 
         Collections.sort(EdgeList);
