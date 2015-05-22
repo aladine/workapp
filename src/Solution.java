@@ -2,19 +2,22 @@ import java.io.*;
 
 public class Solution {
     public static void main(String[] args) throws FileNotFoundException {
-        InputStream inputStream =  new FileInputStream("D:\\Gdrive\\IdeaProjects\\WorkApp\\src\\input_03.txt");//System.in;//new File("input_01.txt");
+        InputStream inputStream =  new FileInputStream("D:\\Gdrive\\IdeaProjects\\WorkApp\\src\\input_04.txt");//System.in;
         OutputStream outputStream = System.out;
         InputReader in = new InputReader(inputStream);
         OutputWriter out = new OutputWriter(outputStream);
         long now = System.currentTimeMillis();
+
+        Turtle solver = new Turtle();
+        solver.solve(1, in, out);
 //        SherlockAndMiniMax solver = new SherlockAndMiniMax();
 //        solver.solve(1, in, out);
 //        Boxes solver = new Boxes();
 //        solver.solve(1, in, out);
 
-        ConnectCampus solver = new ConnectCampus();
-        int T = in.readInt();
-        solver.solve(T, in, out);
+//        ConnectCampus solver = new ConnectCampus();
+//        int T = in.readInt();
+//        solver.solve(T, in, out);
 
 
 
